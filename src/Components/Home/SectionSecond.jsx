@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
 import { BsStarFill } from "react-icons/bs";
 
 const SectionSecond = () => {
@@ -34,6 +34,7 @@ const SectionSecond = () => {
                                     <p>4.5</p>
                                 </div>
                             </div>
+                            <Link to={`/${m.id}`} className='btn btn-warning'>Show Details</Link>
                         </div>
                     </div>)
                 }
