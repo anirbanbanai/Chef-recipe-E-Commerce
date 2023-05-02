@@ -16,13 +16,13 @@ const Sectionfirst = () => {
             <h2 className='text-4xl font-semibold '>Meet the <span className='text-green-500'>Chef</span></h2>
             <br />
             <hr className=' border-4 border-dashed' />
-            <div className='grid md:grid-cols-2 lg:grid-cols-3'>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 '>
                 {
                     data.map(m => <div className=' bg-green-300 rounded-xl p-3 m-3 hover:-rotate-1 hover:opacity-80' key={m.name}>
                         <p>{m.id}</p>
                         <p className='text-xl font-semibold'>{m.chef.name}</p>
                         <p className='text-xl '>From : <b>{m.name}</b></p>
-                        <img className='w-[350px] h-[200px]' src={m.chef.picture} alt="" />
+                        <img className='w-[350px] h-[200px] mx-auto rounded-xl' src={m.chef.picture} alt="" />
                         <p>Experience : <b>{m.chef.experience} year.</b>  </p>
                          <h1>Recipe Item : {m.chef.recipes}</h1>
                          <Link to={`/${m.id}`} className='btn btn-warning'>Show Recipe <BsArrowRight className='text-xl font-bold ml-1'/></Link>

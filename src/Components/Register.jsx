@@ -1,10 +1,19 @@
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import { BsGithub } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 
 const Register = () => {
     const [error, setError] = useState('')
-    const { createUser } = useContext(AuthContext)
+    const { createUser, CreateGitUser, CreateGoogleUser } = useContext(AuthContext)
+
+    const GitSign = ()=>{
+        CreateGitUser()
+    }
+    const GoogleSign = ()=>{
+        CreateGoogleUser()
+    }
 
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -30,11 +39,21 @@ const Register = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
+                
                 <div className="hero-content flex-col ">
-                    <div className="text-center ">
+                <div className="text-center ">
                         <h1 className="text-5xl font-bold">Register now!</h1>
 
                     </div>
+                <div>
+                    <button onClick={GitSign} className='btn text-black bg-white hover:text-white'><BsGithub className='text-2xl mr-2'/> Sign In with Github</button>
+                    <button onClick={GoogleSign} className='btn bg-white text-black hover:text-white'><FcGoogle className='text-2xl mr-2 '/> Sign In with Google</button>
+                </div>
+
+                <div>
+                    <h3 className='text-3xl font-semibold'>Or</h3>
+                </div>
+                    
                     <div className="card flex-shrink-0 w-full max-w-sm shadow-2xl bg-base-100">
                         <form onSubmit={handleSubmit} className="card-body">
                             <div className="form-control">

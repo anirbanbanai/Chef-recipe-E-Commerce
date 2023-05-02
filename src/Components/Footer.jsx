@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
            
         </div>
-        <h2 className='text-center text-xl font-semibold'> Copyright © 2023, Food Recipes - A Premium HTML Template</h2>
+        <h2 className='text-center text-sm font-semibold'> Copyright © 2023, Food Recipes - A Premium HTML Template</h2>
         </div>
     );
 };

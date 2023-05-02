@@ -14,7 +14,7 @@ const SectionSecond = () => {
         <div className='mt-5 min-h-screen  bg-opacity-60' >
             <h2 className='text-4xl font-bold'>Popular Recipe</h2>
             <hr className='border-2 border-black mt-3 mb-3' />
-            <div className='grid grid-cols-3' style={{ backgroundImage: `url("https://www.slowfood.com/wp-content/uploads/2016/10/world-food-day.jpg")` } }>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3' style={{ backgroundImage: `url("https://www.slowfood.com/wp-content/uploads/2016/10/world-food-day.jpg")` } }>
                 {
                     data.map(m => <div className='bg-white rounded-2xl m-5 p-3 hover:bg-green-100' key={m.id}>
                         <img className='w-3/4 mx-auto h-[250px] rounded-xl' src={m.view_recipes_url} alt="" />
