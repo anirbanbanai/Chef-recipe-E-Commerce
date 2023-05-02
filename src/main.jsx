@@ -10,6 +10,7 @@ import Home from './Components/Home.jsx';
 import Login from './Components/Login';
 import Register from './Components/Register';
 import AuthProvider from './Components/AuthProvider';
+import Sectionfirst from './Components/Home/Sectionfirst';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +28,11 @@ const router = createBrowserRouter([
       {
         path:"/register",
         element:<Register></Register>
+      },
+      {
+        path:"/section1",
+        element:<Sectionfirst></Sectionfirst>,
+        loader:()=>fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
       }
     ]
   },
