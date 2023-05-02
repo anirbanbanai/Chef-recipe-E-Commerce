@@ -10,15 +10,34 @@ const Header = () => {
     }
 
     return (
-        <div className='bg-slate-200 '>
-            <div className='p-2 flex justify-around'>
+        <div className='text-center sm:flex justify-around items-center bg-slate-200 w-[100%]'>
+            <div>
+                <h2 className='text-5xl font-bold'>Ch<span className='text-blue-600'>ef</span><span className='text-red-600'>UI</span> </h2>
+            </div>
+           <div className='mt-4'>
+            <Link className='text-2xl font-semibold mr-2' to='/'>Home</Link>
+            <Link className='text-2xl font-semibold mr-2' to='/'>Blog</Link>
+            <Link className='text-2xl font-semibold mr-2' to='/'>Profile</Link>
+           </div>
+           <div className='mt-4'>
+                    {!user && <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
+                    {user && <button onClick={handleOut} className='btn btn-warning'>LogOut</button>}
+                </div>
+        </div>
+    );
+};
+
+export default Header;
+
+
+{/* <div className='p-2 flex justify-around'>
                 <div >
-                    <div className="flex-1">
-                        <a className="btn btn-ghost normal-case text-5xl font-bold text-blue-800"><span className='text-red-600'>Ch</span> <span className='text-green-600'>ef</span> UI</a>
+                    <div className="flex items-center">
+                        <h2 className='text-3xl sm:text-5xl font-bold'>Ch<span className='text-blue-600'>ef</span><span className='text-red-600'>UI</span> </h2>
                     </div>
                 </div>
                 <div className="">
-                    <ul className="menu menu-horizontal px-1">
+                    <ul className="menu menu-horizontal ">
                         <li className='text-2xl font-semibold'><Link to='/'>Home</Link></li>
 
                         <li className='text-2xl font-semibold' tabIndex={0}>
@@ -36,10 +55,4 @@ const Header = () => {
                     {!user && <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
                     {user && <button onClick={handleOut} className='btn btn-warning'>LogOut</button>}
                 </div>
-            </div>
-
-        </div>
-    );
-};
-
-export default Header;
+            </div> */}

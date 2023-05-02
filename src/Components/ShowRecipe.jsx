@@ -13,7 +13,7 @@ const ShowRecipe = () => {
             <div className=' mx-auto'>
                 <p className='text-2xl font-semibold text-center'>{dat.recipe}</p>
                 <p className='text-xl font-semibold text-center'>{dat.name}</p>
-                <img className='w-2/4 rounded-xl mx-auto' src={dat.view_recipes_url} alt="" />
+                <img className='md:w-2/4  rounded-xl mx-auto' src={dat.view_recipes_url} alt="" />
                 <p className='text-xl'>Title :  {dat.description}</p>
                 <h2><b> <span className='text-xl text-orange-600'>Recipe </span>:  {dat.chef.how_to_cook} </b></h2>
                 <div className='flex p-3  items-center justify-center'>
