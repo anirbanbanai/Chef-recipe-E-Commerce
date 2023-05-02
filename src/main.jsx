@@ -11,6 +11,7 @@ import Login from './Components/Login';
 import Register from './Components/Register';
 import AuthProvider from './Components/AuthProvider';
 import Sectionfirst from './Components/Home/Sectionfirst';
+import ShowRecipe from './Components/ShowRecipe';
 
 const router = createBrowserRouter([
   {
@@ -29,6 +30,12 @@ const router = createBrowserRouter([
         path:"/register",
         element:<Register></Register>
       },
+      {
+        path:"/:id",
+        element:<ShowRecipe></ShowRecipe>,
+        loader : ({params})=>fetch(`https://assign10-server-anirbanbanai.vercel.app/chef/${params.id}`)
+      },
+      
       // {
       //   path:"/section1",
       //   element:<Sectionfirst></Sectionfirst>,

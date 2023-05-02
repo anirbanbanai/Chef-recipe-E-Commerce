@@ -2,7 +2,8 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='bg-slate-700 text-white grid lg:grid-cols-3 md:grid-cols-2 pl-6 pr-6 rounded-xl p-5'>
+        <div className='bg-slate-700 text-white'>
+            <div className=' grid lg:grid-cols-3 md:grid-cols-2 pl-6 pr-6 rounded-xl p-5'>
             <div className='hover:bg-slate-600 p-3 rounded-xl'>
                 <h2 className='text-3xl font-semibold'>Food recipe</h2>
                 <p className='text-sm mt-3'>Donec sollicitudin molestie malesuada. Proin eget tortor risus. Vivamus magna justo, lacinia eget consectetur sed, convallis at tellus. ...</p>
@@ -25,6 +26,9 @@ const Footer = () => {
                 <br />
                 <input className='bg-red-600  mt-3 px-3 py-1 rounded' type="submit" name="" id="" />
             </div>
+           
+        </div>
+        <h2 className='text-center text-xl font-semibold'> Copyright © 2023, Food Recipes - A Premium HTML Template</h2>
         </div>
     );
 };
