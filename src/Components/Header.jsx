@@ -10,7 +10,7 @@ return logOut()
     }
 
     return (
-        <div className='bg-slate-200 rounded-xl'>
+        <div className='bg-slate-200 '>
             <div className="navbar ">
                 <div className="flex-1">
                     <a className="btn btn-ghost normal-case text-4xl text-blue-800">CheafUI</a>

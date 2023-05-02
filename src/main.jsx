@@ -12,6 +12,7 @@ import Register from './Components/Register';
 import AuthProvider from './Components/AuthProvider';
 import Sectionfirst from './Components/Home/Sectionfirst';
 import ShowRecipe from './Components/ShowRecipe';
+import SectionSecond from './Components/Home/SectionSecond';
 
 const router = createBrowserRouter([
   {
@@ -36,11 +37,16 @@ const router = createBrowserRouter([
         loader : ({params})=>fetch(`https://assign10-server-anirbanbanai.vercel.app/chef/${params.id}`)
       },
       
-      // {
-      //   path:"/section1",
-      //   element:<Sectionfirst></Sectionfirst>,
-      //   loader:()=>fetch('http://localhost:4000/chef')
-      // }
+      {
+        path:"/section1",
+        element:<Sectionfirst></Sectionfirst>,
+        loader:()=>fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
+      },
+      {
+        path:"/section2",
+        element:<SectionSecond></SectionSecond>,
+        loader:()=>fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
+      },
     ]
   },
 ]);
