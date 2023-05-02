@@ -29,11 +29,11 @@ const router = createBrowserRouter([
         path:"/register",
         element:<Register></Register>
       },
-      {
-        path:"/section1",
-        element:<Sectionfirst></Sectionfirst>,
-        loader:()=>fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
-      }
+      // {
+      //   path:"/section1",
+      //   element:<Sectionfirst></Sectionfirst>,
+      //   loader:()=>fetch('http://localhost:4000/chef')
+      // }
     ]
   },
 ]);
