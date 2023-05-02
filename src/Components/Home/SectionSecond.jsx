@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { BsStarFill } from "react-icons/bs";
+import { MdOutlineFavoriteBorder, MdFavorite } from "react-icons/md";
 
 const SectionSecond = () => {
     const [data, setData] = useState([])
+    const [show, setShow] = useState(false)
+console.log(show)
+    const handleShow = ()=>{
+        setShow(true);
+    }
 
     useEffect(() => {
         fetch(`https://assign10-server-anirbanbanai.vercel.app/chef`)
@@ -17,10 +23,21 @@ const SectionSecond = () => {
             <div className='grid md:grid-cols-2 lg:grid-cols-3' style={{ backgroundImage: `url("https://www.slowfood.com/wp-content/uploads/2016/10/world-food-day.jpg")` } }>
                 {
                     data.map(m => <div className='bg-white rounded-2xl m-5 p-3 hover:bg-green-100' key={m.id}>
+
                         <img className='w-3/4 mx-auto h-[250px] rounded-xl' src={m.view_recipes_url} alt="" />
+
                         <div className='text-center'>
-                            <p><b>Name : </b> {m.recipe}</p>
+                            <div className='flex justify-between mt-3'>
+                                <div>
+                                <p><b>Name : </b> {m.recipe}</p>
                             <p className='text-xl font-semibold'>{m.name}</p>
+                                </div>
+
+                                <div onClick={()=>setShow(!show)} className='flex text-3xl' >
+                                   {show ?  <button><MdOutlineFavoriteBorder/></button> :
+                                    <button><MdFavorite/></button>}
+                                </div>
+                            </div>
                             <p>{m.description}</p>
                             <div className='flex items-center justify-center'>
                                 <p>Rating :  </p>

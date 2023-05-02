@@ -45,7 +45,7 @@ const Register = () => {
                         <h1 className="text-5xl font-bold">Register now!</h1>
 
                     </div>
-                <div>
+                <div className='mx-auto'>
                     <button onClick={GitSign} className='btn text-black bg-white hover:text-white'><BsGithub className='text-2xl mr-2'/> Sign In with Github</button>
                     <button onClick={GoogleSign} className='btn bg-white text-black hover:text-white'><FcGoogle className='text-2xl mr-2 '/> Sign In with Google</button>
                 </div>

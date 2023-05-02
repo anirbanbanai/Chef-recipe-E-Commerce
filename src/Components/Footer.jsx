@@ -2,7 +2,7 @@ import React from 'react';
 
 const Footer = () => {
     return (
-        <div className='bg-slate-700 text-white'>
+        <div className='bg-slate-700 rounded-xl text-white'>
             <div className=' grid lg:grid-cols-3 md:grid-cols-2 pl-6 pr-6 rounded-xl p-5'>
             <div className='hover:bg-slate-600 p-3 rounded-xl'>
                 <h2 className='text-3xl font-semibold'>Food recipe</h2>
@@ -28,7 +28,7 @@ const Footer = () => {
             </div>
            
         </div>
-        <h2 className='text-center text-sm font-semibold'> Copyright © 2023, Food Recipes - A Premium HTML Template</h2>
+        <h2 className='text-center text-sm font-semibold m-5 p-5'> Copyright © 2023, Food Recipes - A Premium HTML Template</h2>
         </div>
     );
 };

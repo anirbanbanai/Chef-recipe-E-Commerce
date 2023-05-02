@@ -16,7 +16,7 @@ const Sectionfirst = () => {
             <h2 className='text-4xl font-semibold '>Meet the <span className='text-green-500'>Chef</span></h2>
             <br />
             <hr className=' border-4 border-dashed' />
-            <div className='grid md:grid-cols-2 lg:grid-cols-3 '>
+            <div className='grid md:grid-cols-2 lg:grid-cols-3 mx-auto'>
                 {
                     data.map(m => <div className=' bg-green-300 rounded-xl p-3 m-3 hover:-rotate-1 hover:opacity-80' key={m.name}>
                         <p>{m.id}</p>
