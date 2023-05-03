@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { CgProfile } from "react-icons/cg";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
@@ -9,6 +11,7 @@ const Header = () => {
     const handleOut = () => {
         return logOut()
     }
+    const notify = () => toast('Favorite addeed');
 
     return (
         <div className='text-center p-4 sm:flex justify-around items-center bg-slate-200 w-[100%]'>
@@ -18,17 +21,24 @@ const Header = () => {
             <div className='mt-4'>
                 <Link className='text-2xl font-semibold mr-2' to='/'>Home</Link>
                 <Link className='text-2xl font-semibold mr-2' to='/blog1'>Blog</Link>
-                <Link className='text-2xl font-semibold mr-2' to='/'>About  </Link>
+                <Link className='text-2xl font-semibold mr-2' to='/d'>About  </Link>
                 <Link className='text-2xl font-semibold mr-2' to='/'>Contact Us  </Link>
             </div>
             <div className='mt-4 sm:mt-0 flex items-center'>
-            <CgProfile className='text-3xl mr-3'/> 
+                <div className="tooltip tooltip-bottom" data-tip="Welcome user">
+                    <button className="text-4xl mr-3"><CgProfile /></button>
+                </div>
                 {!user && <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
                 {user && <button onClick={handleOut} className='btn btn-warning'>LogOut</button>}
+               <div>
+                <button onClick={notify}>Toast</button>
+                <ToastContainer></ToastContainer>
+               </div>
             </div>
         </div>
     );
 };
+
 
 export default Header;
 
