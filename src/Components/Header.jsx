@@ -20,7 +20,16 @@ const Header = () => {
             </div>
             <div className='mt-4'>
                 <Link className='text-2xl font-semibold mr-2' to='/'>Home</Link>
-                <Link className='text-2xl font-semibold mr-2' to='/blog1'>Blog</Link>
+
+                <Link className='text-2xl font-semibold mr-2' ><div className="dropdown dropdown-hover">
+                    <label tabIndex={0} className="m-1">Blog</label>
+                    <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
+                        <li className='text-xl'><Link to='/blog1'>Recipe Blog</Link></li>
+                        <li className='text-xl'><Link to='/blog2'> Assignment FAQ</Link></li>
+                    </ul>
+                </div></Link>
+
+
                 <Link className='text-2xl font-semibold mr-2' to='/d'>About  </Link>
                 <Link className='text-2xl font-semibold mr-2' to='/'>Contact Us  </Link>
             </div>
@@ -30,10 +39,10 @@ const Header = () => {
                 </div>
                 {!user && <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
                 {user && <button onClick={handleOut} className='btn btn-warning'>LogOut</button>}
-               <div>
-                <button onClick={notify}>Toast</button>
-                <ToastContainer></ToastContainer>
-               </div>
+                <div>
+                    <button onClick={notify}>Toast</button>
+                    <ToastContainer></ToastContainer>
+                </div>
             </div>
         </div>
     );

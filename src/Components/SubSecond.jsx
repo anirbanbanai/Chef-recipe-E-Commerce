@@ -33,7 +33,7 @@ const SubSecond = ({ m }) => {
 
                         </div>}
                         {!show && <div className='flex text-3xl' >
-                            <button ><MdFavorite /></button>
+                            <button className=' cursor-not-allowed'><MdFavorite /></button>
 
                         </div>}
 

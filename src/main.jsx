@@ -30,7 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/chef/:id",
-        element: <ShowRecipe></ShowRecipe>,
+        element: <PrivetRoute><ShowRecipe></ShowRecipe></PrivetRoute>,
         loader: ({ params }) => fetch(`https://assign10-server-anirbanbanai.vercel.app/chef/${params.id}`)
       },
 
@@ -61,6 +61,10 @@ const router = createBrowserRouter([
       },
       {
         path:"/blog1",
+        element:<BlogOne/>
+      },
+      {
+        path:"/blog2",
         element:<BlogTwo></BlogTwo>
       },
    

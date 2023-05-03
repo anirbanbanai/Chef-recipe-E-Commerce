@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlogOne = () => {
     return (
-        <div>
+        <div className='w-3/4 mx-auto'>
             <h2 className='text-2xl'>
 
 Here are five different types of cooking recipe blog posts you can try your cooking time: </h2>
