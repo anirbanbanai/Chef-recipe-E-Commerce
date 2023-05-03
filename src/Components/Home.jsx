@@ -3,11 +3,12 @@ import Sectionfirst from './Home/Sectionfirst';
 import SectionSecond from './Home/SectionSecond';
 import Section from './Home/Section';
 import { AuthContext } from './AuthProvider';
+import { ref } from './Header';
 
 const Home = () => {
     const { loader } = useContext(AuthContext)
     return (
-        <div>
+        <div ref={ref}>
             {
                 loader && <div className='mx-auto text-center mt-6'>
                     <div

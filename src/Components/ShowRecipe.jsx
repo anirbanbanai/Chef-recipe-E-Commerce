@@ -1,12 +1,15 @@
 import React from 'react';
+import { VscFilePdf } from "react-icons/vsc";
 import { useLoaderData } from 'react-router-dom';
 import { AiFillLike } from "react-icons/ai";
+import Pdf from "react-to-pdf";
+export const reff = React.createRef();
 
 const ShowRecipe = () => {
     const dat = useLoaderData();
     // console.log(dat)
     return (
-        <div className='p-8 bg-red-200 text-center'>
+        <div ref={reff} className='p-8 bg-red-200 text-center'>
             <h3 className='text-4xl font-semibold'>Show recipe</h3>
             <br />
             <hr className=' border-blue-700 border-4 border-dashed' />
@@ -21,7 +24,14 @@ const ShowRecipe = () => {
                     <AiFillLike className='text-3xl mr-1 ml-1' />
                     <p>  {dat.chef.likes}</p>
                 </div>
+
             </div>
+           
+            <div className='ml-3'>
+                    <Pdf targetRef={reff} filename="code-example.pdf">
+                        {({ toPdf }) =>   <button onClick={toPdf} className='btn bg-warning text-black hover:text-white'>Download <VscFilePdf className='text-xl ml-2'/></button>}
+                    </Pdf>
+                </div>
         </div>
     );
 };

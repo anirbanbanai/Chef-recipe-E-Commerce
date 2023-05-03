@@ -10,7 +10,7 @@ const SubSecond = ({ m }) => {
     const notify = () => toast('Favorite addeed');
 
     console.log(show)
-    const handleShow = (event) => {
+    const handleShow = () => {
         setShow((prev) => !prev);
         notify();
 
@@ -29,9 +29,13 @@ const SubSecond = ({ m }) => {
                         </div>
 
                         {show && <div onClick={handleShow} className='flex text-3xl' >
-                            <button ><MdOutlineFavoriteBorder /></button>
+                            <button 
+                            ><MdOutlineFavoriteBorder />
+                            </button>
 
                         </div>}
+                        <ToastContainer/>
+
                         {!show && <div className='flex text-3xl' >
                             <button className=' cursor-not-allowed'><MdFavorite /></button>
 
