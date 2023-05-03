@@ -4,7 +4,7 @@ import { AiFillLike } from "react-icons/ai";
 
 const ShowRecipe = () => {
     const dat = useLoaderData();
-    console.log(dat)
+    // console.log(dat)
     return (
         <div className='p-8 bg-red-200 text-center'>
             <h3 className='text-4xl font-semibold'>Show recipe</h3>

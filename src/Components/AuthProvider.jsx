@@ -7,7 +7,7 @@ export const AuthContext = createContext(null);
 const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
-    const [loader, setLoader] = useState([])
+    const [loader, setLoader] = useState(true)
     const [user, setUser] = useState();
 
     // if(loader){
@@ -27,12 +27,12 @@ const AuthProvider = ({ children }) => {
     const GoogleProvider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
-        setLoader()
+        setLoader(true)
         return createUserWithEmailAndPassword(auth, email, password);
     }
 
     const loginUser = (email, password) => {
-        setLoader()
+        setLoader(true)
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -51,7 +51,7 @@ const CreateGoogleUser = ()=>{
     useEffect(() => {
         const unSub = onAuthStateChanged(auth, (currentuser) => {
             setUser(currentuser)
-            setLoader()
+            setLoader(false)
         });
         return () => {
             unSub()

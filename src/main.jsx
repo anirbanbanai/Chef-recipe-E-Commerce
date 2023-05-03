@@ -15,6 +15,8 @@ import ShowRecipe from './Components/ShowRecipe';
 import SectionSecond from './Components/Home/SectionSecond';
 import SecHome from './Components/SecHome';
 import Error from './Components/Error';
+import PrivetRoute from './Components/PrivetRoute';
+import BlogOne from './Components/Blog/BlogOne';
 
 const router = createBrowserRouter([
   {
@@ -27,7 +29,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/:id",
-        element: <ShowRecipe></ShowRecipe>,
+        element: <PrivetRoute><ShowRecipe></ShowRecipe></PrivetRoute>,
         loader: ({ params }) => fetch(`https://assign10-server-anirbanbanai.vercel.app/chef/${params.id}`)
       },
 
@@ -55,6 +57,10 @@ const router = createBrowserRouter([
       {
         path: "/register",
         element: <Register></Register>
+      },
+      {
+        path:"/blog1",
+        element:<PrivetRoute><BlogOne></BlogOne></PrivetRoute>
       }
     ]
   },
