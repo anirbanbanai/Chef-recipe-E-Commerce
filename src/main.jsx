@@ -17,6 +17,7 @@ import SecHome from './Components/SecHome';
 import Error from './Components/Error';
 import PrivetRoute from './Components/PrivetRoute';
 import BlogOne from './Components/Blog/BlogOne';
+import BlogTwo from './Components/Blog/BlogTwo';
 
 const router = createBrowserRouter([
   {
@@ -60,7 +61,7 @@ const router = createBrowserRouter([
       },
       {
         path:"/blog1",
-        element:<PrivetRoute><BlogOne></BlogOne></PrivetRoute>
+        element:<BlogTwo></BlogTwo>
       }
     ]
   },
