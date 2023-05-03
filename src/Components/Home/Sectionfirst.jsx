@@ -12,7 +12,7 @@ const Sectionfirst = () => {
     }, [])
 // console.log(data)
     return (
-        <div className='mt-5 w-[90%] mx-auto' >
+        <div className='mt-5 mb-4 w-[90%] mx-auto' >
             <h2 className='text-4xl font-semibold '>Meet the <span className='text-green-500'>Chef</span></h2>
             <br />
             <hr className=' border-4 border-dashed' />

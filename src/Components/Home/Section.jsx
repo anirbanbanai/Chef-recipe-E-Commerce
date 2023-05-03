@@ -6,7 +6,7 @@ const Section = () => {
         <div className='p-5'>
             <h2 className='text-5xl font-bold text-center'>Food <span className='text-blue-500'>Gallary</span></h2>
         </div>
-         <div className="carousel  w-[80%] h-[500px] mx-auto">
+         <div className="carousel  w-[80%] md:h-[500px] mx-auto">
             <div id="slide1" className="carousel-item relative w-full">
                 <img src="https://media.cnn.com/api/v1/images/stellar/prod/160929101749-essential-spanish-dish-paella-phaidon.jpg?q=w_1900,h_1069,x_0,y_0,c_fill/w_1280" />
                 <div className="absolute flex justify-between transform -translate-y-1/2 left-5 right-5 top-1/2">

@@ -10,7 +10,7 @@ const Header = () => {
     }
 
     return (
-        <div className='text-center sm:flex justify-around items-center bg-slate-200 w-[100%]'>
+        <div className='text-center p-4 sm:flex justify-around items-center bg-slate-200 w-[100%]'>
             <div>
                 <h2 className='text-5xl font-bold'>Ch<span className='text-blue-600'>ef</span><span className='text-red-600'>UI</span> </h2>
             </div>
@@ -19,7 +19,7 @@ const Header = () => {
             <Link className='text-2xl font-semibold mr-2' to='/'>Blog</Link>
             <Link className='text-2xl font-semibold mr-2' to='/'>Profile</Link>
            </div>
-           <div className='mt-4'>
+           <div className='mt-4 sm:mt-0'>
                     {!user && <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
                     {user && <button onClick={handleOut} className='btn btn-warning'>LogOut</button>}
                 </div>

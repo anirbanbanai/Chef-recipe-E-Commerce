@@ -14,6 +14,7 @@ import Sectionfirst from './Components/Home/Sectionfirst';
 import ShowRecipe from './Components/ShowRecipe';
 import SectionSecond from './Components/Home/SectionSecond';
 import SecHome from './Components/SecHome';
+import Error from './Components/Error';
 
 const router = createBrowserRouter([
   {
@@ -38,7 +39,7 @@ const router = createBrowserRouter([
       {
         path: "/section2",
         element: <SectionSecond></SectionSecond>,
-        loader: () => fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
+        loader: ({params}) => fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
       },
     ]
   },
@@ -56,6 +57,11 @@ const router = createBrowserRouter([
         element: <Register></Register>
       }
     ]
+  },
+
+  {
+    path:"/*",
+    element:<h2>You going wrong prth</h2>
   }
 ]);
 
