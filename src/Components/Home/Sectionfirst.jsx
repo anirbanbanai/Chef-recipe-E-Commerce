@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { BsArrowRight } from "react-icons/bs";
 
+
 const Sectionfirst = () => {
     const [data, setData] = useState([])
 

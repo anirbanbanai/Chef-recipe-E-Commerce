@@ -4,6 +4,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import { Link, useLoaderData, useParams } from 'react-router-dom';
 import { BsStarFill } from "react-icons/bs";
 import { MdOutlineFavoriteBorder, MdFavorite } from "react-icons/md";
+import LazyLoad from 'react-lazyload';
 
 const SubSecond = ({ m }) => {
     const [show, setShow] = useState(true)
@@ -19,7 +20,9 @@ const SubSecond = ({ m }) => {
         <div>
             <div className='bg-white rounded-2xl m-5 p-3 hover:bg-green-100' key={m.id}>
 
-                <img className='w-3/4 mx-auto h-[250px] rounded-xl' src={m.view_recipes_url} alt="" />
+               <LazyLoad height={200}>
+               <img className='w-3/4 mx-auto h-[250px] rounded-xl' src={m.view_recipes_url} alt="" />
+               </LazyLoad>
 
                 <div className='text-center'>
                     <div className='flex justify-between mt-3'>
@@ -28,13 +31,13 @@ const SubSecond = ({ m }) => {
                             <p className='text-xl font-semibold'>{m.name}</p>
                         </div>
 
-                        {show && <div onClick={handleShow} className='flex text-3xl' >
+                        {show && <div onClick={handleShow} className='flex ' >
                             <button 
-                            ><MdOutlineFavoriteBorder />
+                            ><MdOutlineFavoriteBorder className='text-3xl' />
                             </button>
 
-                        </div>}
                         <ToastContainer/>
+                        </div>}
 
                         {!show && <div className='flex text-3xl' >
                             <button className=' cursor-not-allowed'><MdFavorite /></button>
