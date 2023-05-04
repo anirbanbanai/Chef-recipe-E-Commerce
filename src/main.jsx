@@ -42,7 +42,7 @@ const router = createBrowserRouter([
       {
         path: "/section2",
         element: <SectionSecond></SectionSecond>,
-        loader: ({params}) => fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
+        loader: ({ params }) => fetch('https://assign10-server-anirbanbanai.vercel.app/chef')
       },
     ]
   },
@@ -60,20 +60,20 @@ const router = createBrowserRouter([
         element: <Register></Register>
       },
       {
-        path:"/blog1",
-        element:<BlogOne/>
+        path: "/blog1",
+        element: <BlogOne />
       },
       {
-        path:"/blog2",
-        element:<BlogTwo></BlogTwo>
+        path: "/blog2",
+        element: <BlogTwo></BlogTwo>
       },
-   
+
     ]
   },
-   
+
   {
-    path:"/*",
-    element:<Error></Error>
+    path: "/*",
+    element: <Error></Error>
   }
 ]);
 

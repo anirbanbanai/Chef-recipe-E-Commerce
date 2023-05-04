@@ -39,14 +39,14 @@ const AuthProvider = ({ children }) => {
     const logOut = () => {
         return signOut(auth)
     }
-    
-const CreateGitUser = ()=>{
-    return signInWithPopup(auth, GitProvider);
-}
 
-const CreateGoogleUser = ()=>{
-    return signInWithPopup(auth, GoogleProvider)
-}
+    const CreateGitUser = () => {
+        return signInWithPopup(auth, GitProvider);
+    }
+
+    const CreateGoogleUser = () => {
+        return signInWithPopup(auth, GoogleProvider)
+    }
 
     useEffect(() => {
         const unSub = onAuthStateChanged(auth, (currentuser) => {

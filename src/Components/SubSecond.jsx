@@ -18,11 +18,11 @@ const SubSecond = ({ m }) => {
     }
     return (
         <div>
-            <div className='bg-white rounded-2xl m-5 p-3 hover:bg-green-100' key={m.id}>
+            <div className='bg-white mx-auto rounded-2xl m-5 p-3 hover:bg-green-100' key={m.id}>
 
-               <LazyLoad height={200}>
-               <img className='w-3/4 mx-auto h-[250px] rounded-xl' src={m.view_recipes_url} alt="" />
-               </LazyLoad>
+                <LazyLoad height={200} >
+                    <img className='w-3/4 mx-auto h-[250px] rounded-xl' src={m.view_recipes_url} alt="" />
+                </LazyLoad>
 
                 <div className='text-center'>
                     <div className='flex justify-between mt-3'>
@@ -32,11 +32,11 @@ const SubSecond = ({ m }) => {
                         </div>
 
                         {show && <div onClick={handleShow} className='flex ' >
-                            <button 
+                            <button
                             ><MdOutlineFavoriteBorder className='text-3xl' />
                             </button>
 
-                        <ToastContainer/>
+                            <ToastContainer />
                         </div>}
 
                         {!show && <div className='flex text-3xl' >

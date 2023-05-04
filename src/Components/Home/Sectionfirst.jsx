@@ -11,7 +11,7 @@ const Sectionfirst = () => {
             .then(res => res.json())
             .then(data => setData(data))
     }, [])
-// console.log(data)
+    // console.log(data)
     return (
         <div className='mt-5 mb-4 w-[90%] mx-auto' >
             <h2 className='text-4xl font-semibold '>Meet the <span className='text-green-500'>Chef</span></h2>
@@ -25,8 +25,8 @@ const Sectionfirst = () => {
                         <p className='text-xl '>From : <b>{m.name}</b></p>
                         <img className='w-[350px] h-[200px] mx-auto rounded-xl' src={m.chef.picture} alt="" />
                         <p>Experience : <b>{m.chef.experience} year.</b>  </p>
-                         <h1>Recipe Item : {m.chef.recipes}</h1>
-                         <Link to={`/chef/${m.id}`} className='btn btn-warning'>Show Recipe <BsArrowRight className='text-xl font-bold ml-1'/></Link>
+                        <h1>Recipe Item : {m.chef.recipes}</h1>
+                        <Link to={`/chef/${m.id}`} className='btn btn-warning'>Show Recipe <BsArrowRight className='text-xl font-bold ml-1' /></Link>
                     </div>)
                 }
             </div>

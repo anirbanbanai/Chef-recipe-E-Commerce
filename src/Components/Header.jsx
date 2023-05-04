@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { VscFilePdf } from "react-icons/vsc";
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { CgProfile } from "react-icons/cg";
 import 'react-toastify/dist/ReactToastify.css';
@@ -18,37 +18,44 @@ const Header = () => {
         return logOut()
     }
 
-
+    console.log(user)
     return (
         <div className='text-center p-4 sm:flex justify-around items-center bg-slate-200 w-[100%]'>
             <div>
                 <h2 className='text-5xl font-bold'>Ch<span className='text-blue-600'>ef</span><span className='text-red-600'>UI</span> </h2>
             </div>
             <div className='mt-4 sm:flex'>
-                <Link className='text-2xl font-semibold mr-2' to='/'>Home</Link>
+                <NavLink className='text-2xl font-semibold mr-2' to='/'>Home</NavLink>
 
                 <h2 className='text-2xl font-semibold mr-2' ><div className="dropdown dropdown-hover">
                     <label tabIndex={0} className="m-1">Blog</label>
                     <ul tabIndex={0} className="dropdown-content menu p-2 shadow bg-base-100 rounded-box w-52">
-                        <li className='text-xl'><Link to='/blog1'>Recipe Blog</Link></li>
-                        <li className='text-xl'><Link to='/blog2'> Assignment FAQ</Link></li>
+                        <li className='text-xl'><NavLink to='/blog1'>Recipe Blog</NavLink></li>
+                        <li className='text-xl'><NavLink to='/blog2'> Assignment FAQ</NavLink></li>
                     </ul>
                 </div></h2>
 
 
-                <Link className='text-2xl font-semibold mr-2' to='/d'>About  </Link>
-                <Link className='text-2xl font-semibold mr-2' to='/contact'>Contact Us  </Link>
+                <NavLink className='text-2xl font-semibold mr-2' to='/register'>Register</NavLink>
+                <NavLink className='text-2xl font-semibold mr-2' to='/d'>Random  </NavLink>
             </div>
             <div className='mt-4 sm:mt-0 flex items-center justify-center'>
+               
+                <div>
+                    {
+                        user && <div className="tooltip tooltip-bottom" data-tip={user.displayName}><img className='rounded-full w-[60px] mr-5' src={user.photoURL === 'null' ? <CgProfile /> : user.photoURL} alt="" /></div>
+                    }
+                </div>
                 <div className="tooltip tooltip-bottom" data-tip="Welcome user">
                     <button className="text-4xl mr-3"><CgProfile /></button>
                 </div>
+
                 {!user && <Link to='/login'><button className='btn btn-primary'>Login</button></Link>}
                 {user && <button onClick={handleOut} className='btn btn-warning'>LogOut</button>}
 
-                <div className='ml-3'>
+                <div className='ml-3 tooltip tooltip-bottom md:tooltip-left' data-tip="You need to go home for Download pdf">
                     <Pdf targetRef={ref} filename="code-example.pdf">
-                        {({ toPdf }) => <button onClick={toPdf} className='btn btn-warning'><VscFilePdf className='text-3xl'/></button>}
+                        {({ toPdf }) => <button onClick={toPdf} className='btn btn-warning'><VscFilePdf className='text-3xl' /></button>}
                     </Pdf>
                 </div>
 

@@ -7,10 +7,10 @@ import Header from './Header';
 const Main = () => {
     const navigation = useNavigation();
     return (
-        <div  className='w-[98%] mx-auto'>
+        <div className='w-[98%] mx-auto'>
             <Header></Header>
             <div>{navigation.state === 'loading' && <div className='mx-auto text-center mt-6'>
-                    <div
+                <div
                     className="mx-auto text-center inline-block h-12 w-12 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
                     role="status">
                     <span
@@ -18,7 +18,7 @@ const Main = () => {
                     >Loading...</span
                     >
                 </div>
-                </div> }</div>
+            </div>}</div>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>

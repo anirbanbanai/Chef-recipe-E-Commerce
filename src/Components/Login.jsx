@@ -3,30 +3,54 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 
 const Login = () => {
-   
+    const [error, setError] = useState('');
+    const [succes, setSuccess] = useState('')
     const { loginUser, } = useContext(AuthContext);
-    const navigate  = useNavigate()
+    const navigate = useNavigate()
     const location = useLocation();
     // console.log(location)
     const from = location.state?.from?.pathname || '/';
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
+        setError('');
+        setSuccess('');
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        
-        // console.log(email, password);
+        // console.log(password)
+       
+         if (!/(?=.*[A-Z])/.test(password)) {
+            setError("Please add at lease one Uppercase")
+            return;
+        }
+        else if (!/(?=.*[0-9])/.test(password)) {
+            setError("Please add at lease one number")
+            return;
+        }
+        else if (!/(?=.*[$ # &*@])/.test(password)) {
+            setError("Please add at lease one Special carecter")
+            return;
+        }
 
+        else if (password.length < 6) {
+            setSuccess('6 caracter need');
+            return;
+        }
+
+
+        console.log(succes)
         loginUser(email, password)
             .then(result => {
                 const logg = result.user;
                 console.log(logg);
-                navigate(from, {replace:true})
+                event.target.reset()
+                setError('')
+                navigate(from, { replace: true })
             })
             .catch(error => {
-                console.log(error.message)
+                console.log(error.message);
+                setError(error.message)
             })
     }
 
@@ -55,8 +79,10 @@ const Login = () => {
                                 <label className="label">
                                     <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
                                 </label>
+                                <h2 className='text-red-500'>{succes}</h2>
+                                <h2 className='text-red-500'>{error}</h2>
                             </div>
-                           
+
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Login</button>
                             </div>

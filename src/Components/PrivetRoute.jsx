@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { AuthContext } from './AuthProvider';
 import { Navigate, useLocation } from 'react-router-dom';
 
-const PrivetRoute = ({children}) => {
-    const {user, loader} = useContext(AuthContext);
+const PrivetRoute = ({ children }) => {
+    const { user, loader } = useContext(AuthContext);
     const location = useLocation()
     console.log(location)
 
-   if(loader){
+    if (loader) {
         return <div className='mx-auto text-center'>
             <div
                 className="inline-block h-8 w-8 animate-spin rounded-full border-4 border-solid border-current border-r-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite]"
@@ -19,12 +19,12 @@ const PrivetRoute = ({children}) => {
             </div>
         </div>
     }
-    
-    if(user){
+
+    if (user) {
         return children;
     }
 
-    return <Navigate to='/login' state={{from : location}} replace></Navigate>
+    return <Navigate to='/login' state={{ from: location }} replace></Navigate>
 };
 
 export default PrivetRoute;
