@@ -4,7 +4,7 @@ import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
 import { CgProfile } from "react-icons/cg";
 import 'react-toastify/dist/ReactToastify.css';
-
+import Marquee from "react-fast-marquee";
 import Pdf from "react-to-pdf";
 export const ref = React.createRef();
 
@@ -20,7 +20,8 @@ const Header = () => {
 
     console.log(user)
     return (
-        <div className='text-center p-4 sm:flex justify-around items-center bg-slate-200 w-[100%]'>
+       <div className='bg-slate-200 text-center w-[100%]'>
+         <div className=' p-4 sm:flex justify-around items-center '>
             <div>
                 <h2 className='text-5xl font-bold'>Ch<span className='text-blue-600'>ef</span><span className='text-red-600'>UI</span> </h2>
             </div>
@@ -40,7 +41,7 @@ const Header = () => {
                 <NavLink className='text-2xl font-semibold mr-2' to='/d'>Random  </NavLink>
             </div>
             <div className='mt-4 sm:mt-0 flex items-center justify-center'>
-               
+
                 <div>
                     {
                         user && <div className="tooltip tooltip-bottom" data-tip={user.displayName}><img className='rounded-full w-[60px] mr-5' src={user.photoURL === 'null' ? <CgProfile /> : user.photoURL} alt="" /></div>
@@ -60,7 +61,17 @@ const Header = () => {
                 </div>
 
             </div>
+           
         </div>
+        <div className='bg-blue-200 p-5 flex'>
+            <div>
+                <button className='btn btn-warning'>Latest</button>
+            </div>
+                <Marquee speed={80}>
+                In addition to these technical skills, a successful chef must also possess a strong work ethic, excellent time management skills, and a keen eye for detail. You must be able to work quickly and efficiently under pressure, manage a team of cooks and assistants, and maintain a high level of quality in everything you do.
+                </Marquee>
+            </div>
+       </div>
     );
 };
 
