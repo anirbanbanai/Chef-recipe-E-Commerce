@@ -1,16 +1,24 @@
 import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from './AuthProvider';
+import { BsGithub } from "react-icons/bs";
+import { FcGoogle } from "react-icons/fc";
 
 const Login = () => {
     const [error, setError] = useState('');
     const [succes, setSuccess] = useState('')
-    const { loginUser, } = useContext(AuthContext);
+    const { loginUser,CreateGitUser, CreateGoogleUser } = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
-    // console.log(location)
+   
     const from = location.state?.from?.pathname || '/';
+    const GitSign = () => {
+        CreateGitUser()
+    }
+    const GoogleSign = () => {
+        CreateGoogleUser()
 
+    }
     const handleSubmit = (event) => {
         event.preventDefault();
         setError('');
@@ -57,7 +65,12 @@ const Login = () => {
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
+           
                 <div className="hero-content flex-col ">
+                <div className='mx-auto'>
+                        <button onClick={GitSign} className='btn text-black bg-white hover:text-white'><BsGithub className='text-2xl mr-2' /> Sign In with Github</button>
+                        <button onClick={GoogleSign} className='btn bg-white text-black hover:text-white'><FcGoogle className='text-2xl mr-2 ' /> Sign In with Google</button>
+                    </div>
                     <div className="text-center ">
                         <h1 className="text-5xl font-bold">Login now!</h1>
 

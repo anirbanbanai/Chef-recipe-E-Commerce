@@ -7,7 +7,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import Marquee from "react-fast-marquee";
 import Pdf from "react-to-pdf";
 export const ref = React.createRef();
-
+import moment from 'moment';
 
 // const ref = React.createRef();
 
@@ -71,6 +71,7 @@ const Header = () => {
                 In addition to these technical skills, a successful chef must also possess a strong work ethic, excellent time management skills, and a keen eye for detail. You must be able to work quickly and efficiently under pressure, manage a team of cooks and assistants, and maintain a high level of quality in everything you do.
                 </Marquee>
             </div>
+            <h1 className='text-xl p-4'><b>Today : </b>{moment().format("dddd, MMMM Do YYYY, h:mm:ss a")}</h1>
        </div>
     );
 };
